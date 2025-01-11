@@ -21,8 +21,8 @@ class Bot(Client):
             plugins=dict(root="bot/plugins"),
         )
 
-    async def start(self):
-        await super().start()
+    async def start(self, *args, **kwargs):
+        await super().start(*args, **kwargs)
 
         me = await self.get_me()
         self.owner = await self.get_users(int(Config.OWNER_ID))
